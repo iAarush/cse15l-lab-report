@@ -14,4 +14,12 @@ It's important that you have a course-specific account for CSE 15L set up before
 
 You can also use the link above to look up your username and check your account's permissions. After you reset your password, it may take 15 minutes to update and reflect on the server. 
 # Step 1: Installing VS Code
-Visual Studio Code, commonly referred to as VS Code or VSC, is one of the most popular text editors used today. 
+Visual Studio Code, commonly referred to as VS Code or VSC, is one of the most popular text editors used today. You can use the link below to download VS Code for your device: 
+> https://code.visualstudio.com/
+
+After it's installed and set up, it should look similar to this when you first open it: 
+<img src='Screenshot 2023-01-11 at 12.15.48 PM.png'>
+Then, navigate to the terminal menu and select the button to create a new terminal: 
+<img src='Creating a terminal.png'>
+
+After clicking on this button, a terminal will appear on the bottom half of your screen. If it's too small, it may be a good idea to resize it and make it bigger! 
