@@ -23,3 +23,7 @@ Then, navigate to the terminal menu and select the button to create a new termin
 <img src='Creating a terminal.png'>
 
 After clicking on this button, a terminal will appear on the bottom half of your screen. If it's too small, it may be a good idea to resize it and make it bigger! 
+<br>
+It's time for the next step!
+
+# Step 2: SSHing
