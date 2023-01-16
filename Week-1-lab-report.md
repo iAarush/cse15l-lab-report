@@ -47,6 +47,7 @@ Once you're done with that, you'll be connected to the remote server! The update
 <img src='Server-2.png'>
 And you're in! Now, the commands you run from the terminal will be processed remotely on the server, and not on your computer. You don't even need to be physically present at the Engineering department's lab to make use of the remote server! 
 > Pretty neat.
+
 # Step 3: Running commands remotely 
 At the moment, there isn't much on the remote server in the way of files, programs, or other things. However, I've included some screenshots of commands that I ran on the server and what the output looked like. A brief caption of each command and what it does is also provided. 
 <img src='ls -a.png'>
