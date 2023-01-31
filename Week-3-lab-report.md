@@ -1,5 +1,5 @@
 # Aarush's Week 3 Lab Report 
-*Hi, I'm Aarush! In this lab report, I'll be covering some new topics!*
+Hi, I'm Aarush! In this lab report, I'll be covering some new topics!
 
 # Part 1: Building a StringServer! 
 In this section of the report, I'm to share the code I used to build a server that processes strings, and explain key parts of it. 
