@@ -3,9 +3,7 @@ import java.net.URI;
 import java.util.ArrayList;
 
 class Handler2 implements URLHandler {
-    // The one bit of state on the server: a number that will be manipulated by
-    // various requests.
-    ArrayList<String> stored = new ArrayList<>();
+    ArrayList<String> stored = new ArrayList<String>();
 
     @Override
     public String handleRequest(URI url) {
@@ -15,8 +13,9 @@ class Handler2 implements URLHandler {
             if (url.getPath().contains("/add-message")) {
                 String[] parameters = url.getQuery().split("=");
                 if (parameters[0].equals("s")) {
-                    String appendObject = parameters[1] + "\n";
+                    String appendObject = "\n" + parameters[1];
                     this.stored.add(appendObject);
+                    //this.stored.add(parameters[1]);
                     return this.stored.toString();
                 }
             }

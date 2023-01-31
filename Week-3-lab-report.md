@@ -2,6 +2,70 @@
 *Hi, I'm Aarush! In this lab report, I'll be covering some new topics! 
 
 # Part 1: Building a StringServer! 
+In this section of the report, I'm to share the code I used to build a server that processes strings, and explain key parts of it. 
+## Imports
+```java
+import java.io.IOException;
+import java.net.URI;
+import java.util.ArrayList;
+```
+The imports are fairly straightforward- just some libraries that will make our work easier.
+
+```java
+public class StringServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler2());
+    }
+}
+```
+The main method, shown above, provides some basic code. We interpret the command line arguments to be the port number the user starting the server prefers, and then start a new server at that port on the computer's local network. 
+
+Things get more fun next: 
+```java
+class Handler2 implements URLHandler {
+    ArrayList<String> stored = new ArrayList<String>();
+
+    @Override
+    public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            return ("null path, try again with a different URL");
+        } else if (url.getPath().equals("/add-message")) {
+            if (url.getPath().contains("/add-message")) {
+                String[] parameters = url.getQuery().split("=");
+                if (parameters[0].equals("s")) {
+                    String appendObject = "\n" + parameters[1];
+                    this.stored.add(appendObject);
+                    return this.stored.toString();
+                }
+            }
+            return "null string";
+        } else {
+            System.out.println("Path: " + url.getPath());
+            return "404 Not Found!";
+        }
+    }
+}
+```
+> Full disclosure: The majority of this code has been repurposed from code I had already written for a lab. 
+
+
+In the `handler2` method shown above, we pass in the URL the server receives and process it. Outputs that aren't formatted the way we want are rejected, but we accept anything that includes the `"/add-message"`path and the query `s` that follows it. For strings passed to the server in a URL with this format, we concatenate a new line and then add them to an existing array before passing the string representation of the array back to the user! 
+> Pretty cool. 
+
+Here are some images of our server in action: 
+<img src='Week-3-lab-report-files/First adding.png'></img>
+In the first screenshot, only 1 string is returned because that's the only thing stored in the array right now. At this point, the server has already been started, so only the `Handler2` class is called. The url changes with each request, and this updates the `url.getPath()` method's return value. If the path is the way we want it to be, the `parameters` array will get different values based on the URL that was sent to the server, and this will affect the variable we add to the array. Consequently, it also affects the values returned back to the user. 
+
+This is true for all values that we may pass to the server. The next image shows what the output looks like after a few more values have been passed in to the server: `test` (yes, again), `How are you`, and `Another test`.
+<img src='Week-3-lab-report-files/Second Adding.png'></img>
+>Cool beans.
 
 # Part 2: 👾 Bug-fixing 👾
 For this section of the report, I'll be talking about a bug I found in Week 3's `reverseInPlace()` method. Originally, this is what the method looked like: 
