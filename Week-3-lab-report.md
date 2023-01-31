@@ -31,6 +31,7 @@ Things get more fun next:
 ```java
 class Handler2 implements URLHandler {
     ArrayList<String> stored = new ArrayList<String>();
+    String appendObject = new String();
 
     @Override
     public String handleRequest(URI url) {
@@ -40,9 +41,8 @@ class Handler2 implements URLHandler {
             if (url.getPath().contains("/add-message")) {
                 String[] parameters = url.getQuery().split("=");
                 if (parameters[0].equals("s")) {
-                    String appendObject = "\n" + parameters[1];
-                    this.stored.add(appendObject);
-                    return this.stored.toString();
+                    this.appendObject += parameters[1] + "\n";
+                    return String.format(this.appendObject);
                 }
             }
             return "null string";
@@ -60,11 +60,14 @@ In the `handler2` method shown above, we pass in the URL the server receives and
 > Pretty cool. 
 
 Here are some images of our server in action: 
-<img src='Week-3-lab-report-files/First adding.png'></img>
+<img src='Week-3-lab-report-files/First adding-2.png'></img>
+>If you're curious about the change in browsers from Safari to Edge, it looks like Chromium-based browsers support this server's output better than Webkit-based browsers.
+
+
 In the first screenshot, only 1 string is returned because that's the only thing stored in the array right now. At this point, the server has already been started, so only the `Handler2` class is called. The url changes with each request, and this updates the `url.getPath()` method's return value. If the path is the way we want it to be, the `parameters` array will get different values based on the URL that was sent to the server, and this will affect the variable we add to the array. Consequently, it also affects the values returned back to the user. 
 
-This is true for all values that we may pass to the server. The next image shows what the output looks like after a few more values have been passed in to the server: `test` (yes, again), `How are you`, and `Another test`.
-<img src='Week-3-lab-report-files/Second Adding.png'></img>
+This is true for all values that we may pass to the server. The next image shows what the output looks like after `Another test` is passed to the server: 
+<img src='Week-3-lab-report-files/Second Adding-2.png'></img>
 >Cool beans.
 
 # Part 2: 👾 Bug-fixing 👾

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 class Handler2 implements URLHandler {
     ArrayList<String> stored = new ArrayList<String>();
+    String appendObject = new String();
 
     @Override
     public String handleRequest(URI url) {
@@ -13,10 +14,8 @@ class Handler2 implements URLHandler {
             if (url.getPath().contains("/add-message")) {
                 String[] parameters = url.getQuery().split("=");
                 if (parameters[0].equals("s")) {
-                    String appendObject = "\n" + parameters[1];
-                    this.stored.add(appendObject);
-                    //this.stored.add(parameters[1]);
-                    return this.stored.toString();
+                    this.appendObject += parameters[1] + "\n";
+                    return String.format(this.appendObject);
                 }
             }
             return "null string";
