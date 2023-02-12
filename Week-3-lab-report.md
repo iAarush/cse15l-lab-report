@@ -70,6 +70,10 @@ This is true for all values that we may pass to the server. The next image shows
 <img src='Week-3-lab-report-files/Second Adding-2.png'>
 >Cool beans.
 
+
+What's going on behind the scenes that allows the output to change like this? It's important to consider the Java code snippets shared above to understand this. At this point, an instance of `StringServer` is already running. In this process, we started a new instance of the `Handler2` method, too. Every time the server receives a path, it first validates it and then appends (adds) it to an internal string named `appendObject`. As more and more valid paths are given to the server, this string grows. This string is then returned back to the web browser, which displays it. 
+<br>So, as more valid paths are sent to the server, the output will change and grow. 
+
 # Part 2: 👾 Bug-fixing 👾
 For this section of the report, I'll be talking about a bug I found in Week 3's `reverseInPlace()` method. Originally, this is what the method looked like: 
 ```java
