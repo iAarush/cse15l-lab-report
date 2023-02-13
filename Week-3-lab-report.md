@@ -97,7 +97,8 @@ It therefore follows that there are many other possible failure-inducing inputs.
 Int[] input2 = {3};
 ``` 
 
-The success of this array can be seen in lines 7 and 8 of the right-hand pane in the screenshot above. 
+The success of this array can be seen in the screenshot below: 
+<img src='Week-3-lab-report-files/Passed test.png'>
 
 
 To solve the logic error, we can make a change that will take slightly more memory, but cut runtime in half. *Fixing code? And making it faster in the process? Maybe Southwest Airlines should hire me :P*
