@@ -28,3 +28,38 @@ I used another interesting command, `man grep` to open the built-in manual. This
 
 > Since the `grep` command is used to search for a string inside files, all the commands displayed after this take place within a directory called `written_2` that has been used in my CSE 15L classes for a while now. 
 
+An interesting quirk about the `grep` command is that it prints out context before and after the found pattern, which might be useful in seeing a sentence or 2 around the text. The `-A` modifier, according to my good friend (<sup>don't judge me</sup>) ChatGPT, stands for "after-context," and this allows us to modify how much "context" (lines before or after the found pattern) we get after the pattern. 
+<img src="Week-5-lab-report-files/macGPT 1.png">
+
+In the image below, I run `grep -A 2 "Lucayans" -r` and `grep -A 10 "Lucayans" -r` and the difference in the size of the output is striking. (ignore the -r for now)
+
+<img src="Week-5-lab-report-files/grep -A (x2).png">
+It just goes to show how useful this command must be in situations where you only want a sentence's worth of context, or perhaps need a full paragraph. 
+
+<br>The `-B` modifier works in the same way, but modifies the context *before* the found pattern. Here are examples of the same 2 commands, but with the `-B` modifier instead of `-A`: 
+
+<img src="Week-5-lab-report-files/grep -B.png">
+
+> Cool! 
+
+# The `-C` modifier 
+Now you can probably imagine that in most cases where we need to modify both the before and after contexts, we will probably be modifying them by the same number. Obviously, it's inefficient to have to type the same number and pass it into 2 arguments. This is where the `-C` modifier comes in. As you might have guessed, it just stands for plain "context" and is the equivalent of modifying both the before and after contexts together. 
+
+The image below shows what the output looks like for `grep -C 2 "Lucayans" -r` and `grep -C 10 "Lucayans" -r`, in that order. 
+
+<img src='Week-5-lab-report-files/grep -C.png'>
+
+> You can see just how much "context" 10 lines before and after the string are! 
+
+# And finally, `-r`
+Finally, let's take a look at the `-r` modifier that I've been passing into all the previous commands! 
+
+It's important to understand the general anatomy of a `grep` command before we see the value of `-r`. A simple `grep` command would take the form: 
+```bash 
+grep [pattern] [files to search]
+```
+The `-A`, `-B`, and `-C` modifiers we had been passing in earlier all went before the pattern, but `-r` actually goes after the pattern. The reason for this is that `-r` stands for "recursive," and modifies `grep`'s behavior to recursively search every file in the directory instead of searching only a specified pattern. If you need to search every file in a directory with variable folder structures, this can be a really useful command!
+
+> That's it for today! I hope you had fun, learned something new, and enjoyed reading this! 
+
+Adios 🫡.
