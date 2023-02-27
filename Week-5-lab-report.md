@@ -63,3 +63,9 @@ The `-A`, `-B`, and `-C` modifiers we had been passing in earlier all went befor
 > That's it for today! I hope you had fun, learned something new, and enjoyed reading this! 
 
 Adios 🫡.
+
+# Research Notes
+Because I used ChatGPT for some of my research in this lab report, I have provided my prompts and the outputs below. 
+<img src="Week-5-lab-report-files/chatGPT/chatGPT 1.png">
+<img src="Week-5-lab-report-files/chatGPT/chatGPT 2.png">
+<img src="Week-5-lab-report-files/chatGPT/chatGPT 3.png">
