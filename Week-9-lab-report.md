@@ -48,4 +48,11 @@ The first thing you'll probably notice the moment Vim opens is that your cursor 
 
 Chances are, you'll want to open the file editor mode first. To do this, we use the `i` command and enter insert mode (you'll notice your cursor magically appears again). Then, we can use the cursor to make edits (in this case, fixing bugs in the `reverseInPlace` method and `reversed` method). 
 
-Now, let's assume we're done editing the code file and want to save our changes. What do we do? 
+Now, let's assume we're done editing the code file and want to save our changes. What do we do? There are a few different commands that will achieve what we want now: `:x` and `:wq`. I'm sure that the underlying implementation is different, but they give us the same outcome: Saving the changes we made, and closing the file. This also returns us back to the standard Vim interface. 
+
+Personally, I prefer the `:x` command because it's one less keypress, and because I learned it before `:wq`. However, in my experience, the `:wq` command is more popular and others are more likely to know it! (Not scientific, medical, legal, or financial advice)
+
+# Conclusion 
+I'm sure that there's more to explore in Vim! It's got a vibrant community and it's been around for a long time. However, that's it for this lab report. 
+
+I hope you enjoyed reading it, and hopefully I'll be able to write and share more things on my website soon!
